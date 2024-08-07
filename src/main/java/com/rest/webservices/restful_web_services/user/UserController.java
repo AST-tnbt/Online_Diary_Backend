@@ -26,6 +26,11 @@ public class UserController {
         return user.get();
     }
 
+    @GetMapping("/users")
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
     @PostMapping("/users")
     public User createUser(@RequestBody User user) {
         user.setId(null);
