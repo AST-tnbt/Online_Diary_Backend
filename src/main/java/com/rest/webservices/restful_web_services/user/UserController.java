@@ -6,6 +6,7 @@ import com.rest.webservices.restful_web_services.posts.Posts;
 import com.rest.webservices.restful_web_services.posts.PostsNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,7 +53,11 @@ public class UserController {
     public List<Posts> getAllPostByUser(@PathVariable int id) {
         Optional<User> user = userRepository.findById(id);
         if (user.isEmpty()) throw new UserNotFoundException("id: " + id);
-        return user.get().getPosts();
+        List<Posts> posts = user.get().getPosts();
+        if (posts == null) {
+            return new ArrayList<>();
+        }
+        return posts;
     }
 
     @PostMapping("/users/{id}/posts")
