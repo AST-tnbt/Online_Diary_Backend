@@ -79,5 +79,6 @@ public class UserController {
     public void deletePost(@PathVariable int id) {
         postRepository.deleteById(id);
     }
+    
 
 }
