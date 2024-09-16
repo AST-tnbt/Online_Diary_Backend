@@ -10,6 +10,7 @@ Some of the skills I have learned include:
 - Interacting with a database using JPA & Hibernate
 
 I know the website is not yet complete, so any feedback is welcome.
+#### Link to front-end repository: [Click here](https://github.com/AST-tnbt/Online_Diary_Fontend)
 ## Physical data model
 Below is the relation data model of the web app:  
 
